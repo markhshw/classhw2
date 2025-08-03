@@ -50,10 +50,12 @@ table {
 }
 
 :root{
+    --primary-100:#F5FEE7;
     --primary-200:#e8fec5;
     --primary-300:#c0fa73;
     --primary-400:#57a203;
     --neutral-0:#ffffff;
+    --neutral-100:#f8f9fa;
     --neutral-300:#dee2e6;
     --neutral-600:#6c757d;
     --neutral-900:#212529;
@@ -63,7 +65,6 @@ table {
 *, *::before, *::after{
     box-sizing: border-box;
 }
-
 
 body{
     font-family: "Noto Sans TC",sans-serif;
@@ -79,17 +80,19 @@ img{
     height: auto;
 }
 
-
 a{
     color: var(--neutral-900);
     text-decoration: none;
     display: block;
     font-weight: 500;
+    text-underline-offset: 4px ;
 }
 
 .container{
-    width: 1296px;
+    max-width: 1320px;
     margin: 0 auto;
+    padding-left: 12px;
+    padding-right: 12px;
 }
 
 .row{
@@ -135,14 +138,42 @@ a{
     width: calc(100% / 12 * 7);
 }
 
+.col-8{
+    padding-left: 12px;
+    padding-right: 12px;
+    width: calc(100% / 12 * 8);
+}
+
+.col-9{
+    padding-left: 12px;
+    padding-right: 12px;
+    width: calc(100% / 12 * 9);
+}
+
 .col-10{
     padding-left: 12px;
     padding-right: 12px;
     width: calc(100% / 12 * 10);
 }
 
+.col-11{
+    padding-left: 12px;
+    padding-right: 12px;
+    width: calc(100% / 12 * 11);
+}
+
+.col-12{
+    padding-left: 12px;
+    padding-right: 12px;
+    width:100%;
+}
+
 .d-flex{
     display: flex;
+}
+
+.d-none{
+    display: none;
 }
 
 .justify-between{
@@ -157,12 +188,37 @@ a{
     align-items: center;
 }
 
+.header{
+    background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/2025-week1/hero.png?raw=true);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 152px 0;
+    text-align: center;
+
+}
+
+.eng-title{
+    font-style: 28px;
+}
+
+.quote{
+  border-radius: 12px;
+  text-align: center;  
+}
+
 .flex-wrap{
     flex-wrap: wrap;
 }
 
 .gap-8{
     gap: 8px;
+}
+
+.h1{
+    font-size: 40px;
+    line-height: 1.2;
+    font-weight: 700;
 }
 
 .h2{
@@ -199,6 +255,10 @@ a{
     font-size: 14px;
 }
 
+.text-white{
+    color: var(--neutral-0);
+}
+
 .text-primary-400{
     color: var(--primary-400);
 }
@@ -211,14 +271,24 @@ a{
     color: var(--danger-300);
 }
 
+.bg-primary-100{
+    background-color: var(--primary-100);
+}
+
 .bg-primary-200{
     background-color: var(--primary-200);
+}
+
+.bg-neutral-100{
+    background-color: var(--neutral-100);
 }
 
 .p-12{
     padding: 12px;
 }
-
+.p-32{
+    padding: 32px;
+}
 .pt-64{
     padding-top: 64px;
 }
@@ -258,23 +328,31 @@ a{
     padding-bottom: 64px;
 }
 
-.mr-8{
+.pb-48{
+    padding-bottom: 48px;
+}
+
+.pe-8{
+    padding-right: 8px;
+}
+
+.me-8{
     margin-right: 8px;
 }
 
-.mr-12{
+.me-12{
     margin-right: 12px;
 }
 
-.mr-24{
+.me-24{
     margin-right: 24px;
 }
 
-.mr-40{
+.me-40{
     margin-right: 40px;
 }
 
-.mr-48{
+.me-48{
     margin-right: 48px;
 }
 
@@ -339,7 +417,6 @@ a{
     cursor: pointer;
     border: none;
     background-color: transparent;
-
 }
 
 .btn-dark{
@@ -356,79 +433,149 @@ a{
     border-top: 1px solid var(--neutral-300);
 }
 
-.allshoe .active{
-    color: var(--primary-400);
-}
-
-.page-item .btn_{
-    padding: 8px 15px;
-    border-radius: o;
-    font-weight: 400;
-}
-
-.page-item .active{
-    background-color: var(--primary-300);
-    font-weight: 500;
-}
-
-.product-row{
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -4px;
-  margin-right: -4px;
-
-}
-
-.product-col{
-    width: calc(100% / 12 * 6);
-    padding-right: 4px;
-    padding-left: 4px;
-}
-
-.del-price{
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--neutral-500);
-    padding-left: 18px;
-}
-
-.product-color{
-    width: 64px;
+.copyright{
+    padding-top: 32px;
     text-align: center;
+    border-top: 1px solid var(--neutral-300);
+    font-size: 14px;
     color: var(--neutral-600);
 }
 
-.btn-product-size{
-    border: 1px solid var(--neutral-300);
-    width: 160px;
+@media(max-width:767px){
+    .row{
+        margin-left: -6px;
+        margin-right: -6px;
+
+    }
+    .col-md-1{
+        padding-left: 6px;
+        padding-right: 6px;
+        width: calc(100% / 4);
+
+    }
+
+    .col-md-2{
+        padding-left: 6px;
+        padding-right: 6px;
+        width: calc(100% / 4 * 2);
+
+    }
+    .col-md-3{
+        padding-left: 6px;
+        padding-right: 6px;
+        width: calc(100% / 4 * 3);
+
+    }
+    .col-md-4{
+        padding-left: 6px;
+        padding-right: 6px;
+        width: 100%;
+    }
+
+    .d-md-block{
+        display: block;
+    }
+    .d-md-none{
+        display: none;
+    }
+    
+    .header{
+        padding: 87px 0;
+        background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/2025-week3-4/hero-sm.png?raw=true);
+    }
+
+    .eng-title{
+        font-size: 20px;
+    }
+
+    .quote{
+        text-align: left;
+    }
+
+    .h3-md{
+    font-size: 28px;
+     }
+    .h4-md{
+    font-size: 24px;
+    }
+    .h5-md{
+    font-size: 20px;
+    }
+    .h6-md{
+    font-size: 16px;
+    }
+    .p-md-24{
+        padding: 24px;
+    }
+    .py-md-16{
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+    .py-md-32{
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+    .pb-md-32{
+        padding-bottom: 32px;
+    }
+    .mb-md-16{
+        margin-bottom: 16px;
+    }
+    .mb-md-24{
+        margin-bottom: 24px;
+    }
+    .mb-md-32{
+        margin-bottom: 32px;
+    }
+
 }
 
-.btn-product-size.active,
-.btn-product-size:hover{
-    border-color: var(--neutral-900);
-}
+@media(max-width:576px){
+    .d-sm-block{
+        display: block;
+    }
+    .d-sm-none{
+        display: none;
+    }
 
-.product-action{
-    display: flex;
-    gap: 8px;
-}
+    .h3-sm{
+    font-size: 28px;
+    }
+    .h4-sm{
+    font-size: 24px;
+    }
+    .h5-sm{
+    font-size: 20px;
+    }
+    .h6-sm{
+    font-size: 16px;
+   }
+    .px-sm-12{
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    .py-sm-12{
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+    .py-sm-32{
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
 
-.product-action .btn{
-    width: 50%;
-}
-
-.product-action .bi{
-    padding-right: 8px;
-}
-
-.product-cardtitle{
-    font-weight: 500;
-}
-
-.product-card p {
-    color: var(--neutral-600);
-}
-
-.product-card{
-    border-bottom: 1px solid var(--neutral-300);
+    .me-sm-0{
+        margin-right: 0;
+    }
+    .me-sm-16{
+        margin-right: 16px;
+    }
+    .mb-sm-4{
+        margin-bottom: 4px;
+    }
+    .mb-sm-8{
+        margin-bottom: 8px;
+    }
+    .btn{
+        padding: 8px 16px;
+    }
 }
